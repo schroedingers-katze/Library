@@ -63,7 +63,10 @@ public class Book {
 		this.year = year;
 		this.pages = pages;
 		this.publisher = publisher;
-		this.ISBNNumber = iSBNNumber;
+		this.ISBNNumber = ISBNNumber;
+	}
+	public Book(Book book){
+		this(book.title, book.author, book.year, book.pages, book.publisher, book.ISBNNumber);
 	}
 	@Override
 	public String toString() {
