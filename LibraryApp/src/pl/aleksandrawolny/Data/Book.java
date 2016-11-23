@@ -50,13 +50,13 @@ public class Book {
 	public String getISBNNumber() {
 		return ISBNNumber;
 	}
-	public void setISBNNumber(String iSBNNumber) {
-		ISBNNumber = iSBNNumber;
+	public void setISBNNumber(String ISBNNumber) {
+		ISBNNumber = ISBNNumber;
 	}
 	
 	
 	
-	public Book(String title, String author, int year, int pages, String publisher, String iSBNNumber) {
+	public Book(String title, String author, int year, int pages, String publisher, String ISBNNumber) {
 		super();
 		this.title = title;
 		this.author = author;
