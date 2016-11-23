@@ -7,6 +7,7 @@ wydawnictwo
 numer ISBN*/
 
 public class Book {
+
 	//class fields
 	private String title;
 	private String author;
@@ -51,5 +52,22 @@ public class Book {
 	}
 	public void setISBNNumber(String iSBNNumber) {
 		ISBNNumber = iSBNNumber;
+	}
+	
+	
+	
+	public Book(String title, String author, int year, int pages, String publisher, String iSBNNumber) {
+		super();
+		this.title = title;
+		this.author = author;
+		this.year = year;
+		this.pages = pages;
+		this.publisher = publisher;
+		this.ISBNNumber = iSBNNumber;
+	}
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", author=" + author + ", year=" + year + ", pages=" + pages + ", publisher="
+				+ publisher + ", ISBNNumber=" + ISBNNumber + "]";
 	}
 }
