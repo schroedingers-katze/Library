@@ -6,46 +6,25 @@ ilość stron
 wydawnictwo
 numer ISBN*/
 
-public class Book {
+public class Book extends Publication{
 
 	//class fields
-	private String title;
 	private String author;
-	private int year;
 	private int pages;
-	private String publisher;
 	private String ISBNNumber;
 	
 	//getters and setters
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
 	public String getAuthor() {
 		return author;
 	}
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public int getYear() {
-		return year;
-	}
-	public void setYear(int year) {
-		this.year = year;
-	}
 	public int getPages() {
 		return pages;
 	}
 	public void setPages(int pages) {
 		this.pages = pages;
-	}
-	public String getPublisher() {
-		return publisher;
-	}
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
 	}
 	public String getISBNNumber() {
 		return ISBNNumber;
@@ -56,21 +35,20 @@ public class Book {
 	
 	
 	
+
 	public Book(String title, String author, int year, int pages, String publisher, String ISBNNumber) {
-		super();
-		this.title = title;
+		super(title, publisher, year);
 		this.author = author;
-		this.year = year;
 		this.pages = pages;
-		this.publisher = publisher;
 		this.ISBNNumber = ISBNNumber;
 	}
+
 	public Book(Book book){
-		this(book.title, book.author, book.year, book.pages, book.publisher, book.ISBNNumber);
+		this(book.getTitle(), book.author, book.getYear(), book.pages, book.getPublisher(), book.ISBNNumber);
 	}
 	@Override
 	public String toString() {
-		return "Book [title: " + title + ", author: " + author + ", year: " + year + ", pages: " + pages + ", publisher: "
-				+ publisher + ", ISBNNumber: " + ISBNNumber + "]";
+		return "Book [title: " + getTitle() + ", author: " + author + ", year: " + getYear() + ", pages: " + pages + ", publisher: "
+				+ getPublisher() + ", ISBNNumber: " + ISBNNumber + "]";
 	}
 }
