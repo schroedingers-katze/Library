@@ -6,11 +6,17 @@ import pl.aleksandrawolny.Data.*;
 public class DataReader {
 	private Scanner scan;
 
-	public void open(){
+	public DataReader(){
 		scan = new Scanner(System.in);
 	}
 	public void close(){
 		scan.close();
+	}
+	
+	public int getInt(){
+		int number = scan.nextInt();
+		scan.nextLine();
+		return number;
 	}
 
 	public Book readBook(){

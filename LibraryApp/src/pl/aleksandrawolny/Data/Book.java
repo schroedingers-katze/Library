@@ -70,7 +70,7 @@ public class Book {
 	}
 	@Override
 	public String toString() {
-		return "Book [title=" + title + ", author=" + author + ", year=" + year + ", pages=" + pages + ", publisher="
-				+ publisher + ", ISBNNumber=" + ISBNNumber + "]";
+		return "Book [title: " + title + ", author: " + author + ", year: " + year + ", pages: " + pages + ", publisher: "
+				+ publisher + ", ISBNNumber: " + ISBNNumber + "]";
 	}
 }
