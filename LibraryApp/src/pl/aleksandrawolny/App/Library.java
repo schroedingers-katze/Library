@@ -3,36 +3,50 @@ package pl.aleksandrawolny.App;
 import pl.aleksandrawolny.Data.*;
 import pl.aleksandrawolny.Utils.*;
 public class Library {
-	public static final int maxBooks = 100;
+	public static final int maxPubl = 100;
 	private int booksNumber = 0;
+	private int magNumber = 0;
 	private Book[] books;
+	private Magazine[] magazines;
 	
 	public Library(){
-		books = new Book[maxBooks];
+		books = new Book[maxPubl];
+		magazines = new Magazine[maxPubl];
 	}
-	/*	DataReader dr = new DataReader();
-		books[0] = new Book("W pustyni i w puszczy", "Henryk Sienkiewicz", 1999, 478, "Prószyński S-ka", "345676547");
-		dr.open();
-		books[1] = dr.readBook();
-		System.out.println(books[0].toString());
-		System.out.println(books[1].toString());
-		System.out.println("System może pomieścić " + books.length + " książek.");
-		dr.close();*/
+	
 	public void addBook(Book book){
-		if (booksNumber < maxBooks){
+		if (booksNumber < maxPubl){
 			books[booksNumber] = book;
 			booksNumber++;
 		} else {
-			System.out.println("Zbyt wiele książek w bazie!");
+			System.out.println("Too many books in the library");
 		}
 	}
 	
 	public void printBooks(){
 		if(booksNumber == 0){
-			System.out.println("Brak książek w bibliotece");
+			System.out.println("No books in the library!");
 		}
 		for(int i = 0; i < booksNumber; i++){
 			System.out.println(books[i].toString());
+		}
+	}
+	
+	public void addMagazine(Magazine magazine){
+		if (magNumber < maxPubl){
+			magazines[magNumber] = magazine;
+			magNumber++;
+		} else {
+			System.out.println("Too many magazines in the library!");
+		}
+	}
+	
+	public void printMagazines(){
+		if(magNumber == 0){
+			System.out.println("No magazines in the library");
+		}
+		for(int i = 0; i < magNumber; i++){
+			System.out.println(magazines[i].toString());
 		}
 	}
 }
