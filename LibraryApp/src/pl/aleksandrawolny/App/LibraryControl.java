@@ -25,21 +25,30 @@ public class LibraryControl {
 				case 2:
 					printBooks();
 					break;
-				case 3:					
+				case 3:
+					addMagazine();
+					break;
+				case 4:
+					printMagazines();
+					break;
+				case 5:					
 					program = false;
 					break;
 				default:
-					System.out.println("zła opcja");
+					System.out.println("no such option, try again: ");
 			}
 		}
 		dr.close();
 	}
 	
 	private void printOptions(){
-		System.out.println("Wybierz opcję: ");
-        System.out.println("1 - dodanie nowej książki");
-        System.out.println("2 - wyświetl dostępne książki");
-        System.out.println("3 - wyjście z programu");
+		System.out.println("Choose your option: ");
+        System.out.println("1 - add new book");
+        System.out.println("2 - show all books");
+        System.out.println("3 - add new magazine");
+        System.out.println("4 - show all magazines");
+        System.out.println("5 - wyjście z programu");
+
 	}
 	
 	private void addBook(){
@@ -49,5 +58,14 @@ public class LibraryControl {
 	
 	private void printBooks(){
 		lb.printBooks();
+	}
+	
+	private void addMagazine(){
+		Magazine magazine = dr.readMagazine();
+		lb.addMagazine(magazine);
+	}
+	
+	private void printMagazines(){
+		lb.printMagazines();
 	}
 }
