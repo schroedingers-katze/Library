@@ -1,6 +1,7 @@
 package pl.aleksandrawolny.Data;
 
 public class Publication {
+	//class fields
 	private String title;
 	private String publisher;
 	private int year;
@@ -22,6 +23,11 @@ public class Publication {
 		return year;
 	}
 	public void setYear(int year) {
+		this.year = year;
+	}
+	public Publication(String title, String publisher, int year) {
+		this.title = title;
+		this.publisher = publisher;
 		this.year = year;
 	}
 }
