@@ -17,21 +17,23 @@ public class LibraryControl {
 		boolean program = true;
 		while(program){
 			printOptions();
-			int option = dr.getInt();
+			Option option = Option.createFromInt(dr.getInt());
+			//int option = dr.getInt();
 			switch(option){
-				case 1:
+				case ADD_BOOK:
 					addBook();
 					break;
-				case 2:
+				case SEE_BOOKS:
 					printBooks();
 					break;
-				case 3:
+				case ADD_MAGAZINE:
 					addMagazine();
 					break;
-				case 4:
+				case SEE_MAGAZINES:
 					printMagazines();
 					break;
-				case 5:					
+				case EXIT:		
+					System.out.println("bye, bye");
 					program = false;
 					break;
 				default:
