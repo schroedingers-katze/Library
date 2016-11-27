@@ -16,28 +16,35 @@ public class LibraryControl {
 	public void controlLoop(){
 		boolean program = true;
 		while(program){
-			printOptions();
-			Option option = Option.createFromInt(dr.getInt());
+
 			//int option = dr.getInt();
-			switch(option){
-				case ADD_BOOK:
-					addBook();
-					break;
-				case SEE_BOOKS:
-					printBooks();
-					break;
-				case ADD_MAGAZINE:
-					addMagazine();
-					break;
-				case SEE_MAGAZINES:
-					printMagazines();
-					break;
-				case EXIT:		
-					System.out.println("bye, bye");
-					program = false;
-					break;
-				default:
-					System.out.println("no such option, try again: ");
+			try{
+				printOptions();
+				Option option = Option.createFromInt(dr.getInt());
+				switch(option){
+					case ADD_BOOK:
+						addBook();
+						break;
+					case SEE_BOOKS:
+						printBooks();
+						break;
+					case ADD_MAGAZINE:
+						addMagazine();
+						break;
+					case SEE_MAGAZINES:
+						printMagazines();
+						break;
+					case EXIT:		
+						System.out.println("bye, bye");
+						program = false;
+						break;
+					default:
+						System.out.println("no such option, try again: ");
+				}
+			} catch(InputMismatchException e){
+				System.out.println("Wprowadzono niepoprawne dane, publikacji nie dodano");
+			} catch(NumberFormatException | NoSuchElementException e){
+                System.out.println("Wybrana opcja nie istnieje, wybierz ponownie:");			
 			}
 		}
 		dr.close();
@@ -59,7 +66,7 @@ public class LibraryControl {
 	}
 	
 	private void printBooks(){
-		lb.printBooks();
+		LibraryUtils.printBooks(lb);
 	}
 	
 	private void addMagazine(){
@@ -68,6 +75,6 @@ public class LibraryControl {
 	}
 	
 	private void printMagazines(){
-		lb.printMagazines();
+		LibraryUtils.printMagazines(lb);
 	}
 }
