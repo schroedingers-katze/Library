@@ -1,6 +1,8 @@
 package pl.aleksandrawolny.Data;
 
-public class Publication {
+import java.io.Serializable;
+
+public class Publication implements Serializable{
 	//class fields
 	private String title;
 	private String publisher;

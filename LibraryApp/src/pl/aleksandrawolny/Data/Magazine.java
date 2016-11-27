@@ -1,6 +1,8 @@
 package pl.aleksandrawolny.Data;
 
 public class Magazine extends Publication{
+    private static final long serialVersionUID = 1L;
+
 	//class fields
 	private String month;
 	private int day;

@@ -1,8 +1,12 @@
 package pl.aleksandrawolny.Data;
 
+import java.io.Serializable;
+
+
 //import pl.aleksandrawolny.Data.*;
 import pl.aleksandrawolny.Utils.*;
-public class Library {
+public class Library implements Serializable{
+    private static final long serialVersionUID = 1L;
 	public static final int maxPubl = 200;
 	private int pubNumber = 0;
 	private Publication[] publications;

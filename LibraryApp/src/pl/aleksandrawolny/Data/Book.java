@@ -7,6 +7,7 @@ wydawnictwo
 numer ISBN*/
 
 public class Book extends Publication{
+    private static final long serialVersionUID = 1L;
 
 	//class fields
 	private String author;
