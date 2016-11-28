@@ -2,7 +2,7 @@ package pl.aleksandrawolny.Data;
 
 import java.io.Serializable;
 
-public class Publication implements Serializable{
+public abstract class Publication implements Serializable{
     private static final long serialVersionUID = 1L;
 
 	//class fields
@@ -66,6 +66,4 @@ public class Publication implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
 }
